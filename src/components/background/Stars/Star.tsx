@@ -16,28 +16,28 @@ export const Star: FunctionComponent<StarProps> = (key) => {
   return (
     <>
       {animationTime === 5 && 
-        <div className={`animate-[twinkle_5s_ease-in-out_infinite] absolute w-1 h-1`} style={{top: top, left: left}} />
+        <div className={`animate-[twinkle_5s_ease-in-out_infinite] absolute w-0.5 h-0.5`} style={{top: top, left: left}} />
       }
       {animationTime === 6 && 
-        <div className={`animate-[twinkle_6s_ease-in-out_infinite] absolute w-1 h-1`} style={{top: top, left: left}} />
+        <div className={`animate-[twinkle_6s_ease-in-out_infinite] absolute w-0.5 h-0.5`} style={{top: top, left: left}} />
       }
       {animationTime === 7 && 
-        <div className={`animate-[twinkle_7s_ease-in-out_infinite] absolute w-1 h-1`} style={{top: top, left: left}} />
+        <div className={`animate-[twinkle_7s_ease-in-out_infinite] absolute w-0.5 h-0.5`} style={{top: top, left: left}} />
       }
       {animationTime === 8 && 
-        <div className={`animate-[twinkle_8s_ease-in-out_infinite] absolute w-1 h-1`} style={{top: top, left: left}} />
+        <div className={`animate-[twinkle_8s_ease-in-out_infinite] absolute w-0.5 h-0.5`} style={{top: top, left: left}} />
       }
       {animationTime === 9 && 
-        <div className={`animate-[twinkle_9s_ease-in-out_infinite] absolute w-1 h-1`} style={{top: top, left: left}} />
+        <div className={`animate-[twinkle_9s_ease-in-out_infinite] absolute w-0.5 h-0.5`} style={{top: top, left: left}} />
       }
       {animationTime === 10 && 
-        <div className={`animate-[twinkle_10s_ease-in-out_infinite] absolute w-1 h-1`} style={{top: top, left: left}} />
+        <div className={`animate-[twinkle_10s_ease-in-out_infinite] absolute w-0.5 h-0.5`} style={{top: top, left: left}} />
       }
       {animationTime === 11 && 
-        <div className={`animate-[twinkle_11s_ease-in-out_infinite] absolute w-1 h-1`} style={{top: top, left: left}} />
+        <div className={`animate-[twinkle_11s_ease-in-out_infinite] absolute w-0.5 h-0.5`} style={{top: top, left: left}} />
       }
       {animationTime === 12 && 
-        <div className={`animate-[twinkle_12s_ease-in-out_infinite] absolute w-1 h-1`} style={{top: top, left: left}} />
+        <div className={`animate-[twinkle_12s_ease-in-out_infinite] absolute w-0.5 h-0.5`} style={{top: top, left: left}} />
       }
     </>
   )
