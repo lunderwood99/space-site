@@ -1,7 +1,7 @@
 'use client';
 
 import { FunctionComponent } from "react";
-import useWindowDimensions from "../../hooks/useWindowDimension";
+import useWindowDimensions from "../hooks/useWindowDimension";
 
 interface StarProps {
   key: number
