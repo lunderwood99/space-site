@@ -1,5 +1,5 @@
 export const fetchArtistAlbums = async (accessToken: string) => {
-    const response = await fetch("https://api.spotify.com/v1/artists/4sS2lHJln9gnoUJKsQe8PY/albums", {
+    const response = await fetch(`https://api.spotify.com/v1/artists/${process.env.MOONSHAKE_ARTIST_ID}/albums`, {
       method: 'GET',
       headers: { 'Authorization': 'Bearer ' + accessToken },
     });
