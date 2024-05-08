@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 
-import { MusicEntry, MusicFormat } from "./components/MusicEntry/MusicEntry";
+import { MusicTable } from "./components/MusicTable/MusicTable";
 
 import { fetchSpotifyApiToken, fetchArtistAlbums } from "./routes/routes";
 import { ArtistAlbumsResponse, SpotifyApiTokenResponse } from "./routes/routes.types";
@@ -15,11 +15,11 @@ async function getArtistAlbums() {
 }
 
 const Music: FunctionComponent<MusicProps> = async () => {
-  const albums = await getArtistAlbums()
+  const artistAlbumsResponse = await getArtistAlbums()
 
   return(
     <>
-      <MusicEntry title='Slipperscree' musicFormat={MusicFormat.SINGLE}/>
+      <MusicTable albums={artistAlbumsResponse.items}/>
     </>
   )
 }

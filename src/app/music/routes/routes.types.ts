@@ -1,10 +1,10 @@
-export type AlbumImages = {
+export type AlbumImage = {
   url: string          
   height: number     
   width: number 
 }
 
-export type Artists = {         
+export type Artist = {         
   external_urls: {            
     spotify: string          
   },          
@@ -15,7 +15,7 @@ export type Artists = {
   uri: string        
 }
 
-export type Albums = {      
+export type Album = {      
   album_type: string 
   total_tracks: number     
   available_markets: Array<string>    
@@ -24,7 +24,7 @@ export type Albums = {
   }  
   href: string      
   id: string     
-  images: AlbumImages   
+  images: Array<AlbumImage>
   name: string,     
   release_date: string,     
   release_date_precision: string,      
@@ -33,7 +33,7 @@ export type Albums = {
   },      
   type: string  
   uri: string    
-  artists: Array<Artists>     
+  artists: Array<Artist>     
   album_group: string    
 }  
 
@@ -44,7 +44,7 @@ export type ArtistAlbumsResponse = {
   offset: number
   previous: string 
   total: number
-  items: Array<Albums>
+  items: Array<Album>
 }
 
 export type SpotifyApiTokenResponse = {
