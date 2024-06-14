@@ -4,7 +4,7 @@ export interface HomeProps {}
 
 const Home: FunctionComponent<HomeProps> = () => {
   return (
-    <>Home</>
+    <div className="mb-auto mt-16">Home</div>
   )
 }
 

@@ -9,7 +9,7 @@ export interface MusicTableProps {
 
 export const MusicTable: FunctionComponent<MusicTableProps> = ({ albums }) => {
   return(
-    <div className="flex flex-col justify-start w-full h-full">
+    <div className="flex flex-col justify-start w-full h-full mb-auto mt-16">
       {albums.map((album, index) => <MusicTableRow key={index} album={album}/>)}
     </div>
   )

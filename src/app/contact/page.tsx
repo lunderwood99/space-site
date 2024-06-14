@@ -4,7 +4,7 @@ export interface ContactProps {}
 
 const Contact: FunctionComponent<ContactProps> = () => {
   return (
-    <>Contact</>
+    <div className="mb-auto mt-16">Contact</div>
   )
 }
 
