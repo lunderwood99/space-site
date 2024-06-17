@@ -16,7 +16,7 @@ export const ShowsContent: FunctionComponent<ShowsContentProps> = ({ upcomingSho
 
   return (
     <>
-      <ul className="flex flex-row gap-4 top-0 ml-12 justify-start">
+      <ul className="flex flex-row gap-4 top-0 mr-12 justify-end">
         <li>
           <button 
             className="inline-block transition ease-in-out duration-500 hover:text-green-500 hover:-translate-y-1 hover:scale-110" 

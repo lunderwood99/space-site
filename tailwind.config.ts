@@ -25,6 +25,10 @@ const config: Config = {
     animation: {
       'twinkling-star': 'twinkle 2s linear infinite',
     },
+    screens: {
+      'mobile': {'max': '650px'},
+      'default': '650px'
+    },
   },
   plugins: [],
 }

@@ -18,9 +18,9 @@ const Music: FunctionComponent<MusicProps> = async () => {
   const artistAlbumsResponse = await getArtistAlbums()
 
   return(
-    <>
-      <MusicTable albums={artistAlbumsResponse.items}/>
-    </>
+      <div className="mt-8 pt-4 mb-auto w-full border-t-2 border-white">
+        <MusicTable albums={artistAlbumsResponse.items}/>
+      </div>
   )
 }
 
