@@ -1,23 +1,38 @@
-import {dbConnect, dbClose} from "../../db/dbConnect";
+import { dbConnect, dbClose } from "../../db/dbConnect";
 import Show from "../../db/models/Show";
 
 export async function GET() {
   await dbConnect();
   try {
     const shows = await Show.find();
-    return Response.json(shows)
+    return Response.json(shows);
   } catch (err) {
-    console.debug('Retrieving shows failed: ', err)
+    console.error("Retrieving shows failed: ", err);
+    return Response.json({ status: 500 });
   }
-  await dbClose()
 }
 
-export async function POST(show: { location: string, date: number, link: string }) {
+export async function POST(request: Request) {
+  const req = await request.json();
   await dbConnect();
   try {
-    await Show.create(show);
+    await Show.create(req);
+    return Response.json({ status: 201 });
   } catch (err) {
-    console.debug('Creating show failed: ', err)
+    console.error("Creating show failed: ", err);
+    return Response.json({ status: 500 });
   }
-  await dbClose()
+}
+
+export async function DELETE(request: Request) {
+  const req = await request.json();
+  await dbConnect();
+  try {
+    const res = await Show.deleteOne({ _id: req.showId });
+    console.log(res);
+    return Response.json({ status: 204 });
+  } catch (err) {
+    console.error("Deleting show failed: ", err);
+    return Response.json({ status: 500 });
+  }
 }

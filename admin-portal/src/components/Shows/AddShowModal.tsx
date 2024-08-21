@@ -1,9 +1,5 @@
-import {
-  Dispatch,
-  FunctionComponent,
-  SetStateAction,
-  useState,
-} from "react";
+import { Dispatch, FunctionComponent, SetStateAction, useState } from "react";
+import moment from "moment";
 
 import { Modal } from "../Modal/Modal";
 import { OperativeButton } from "../OperativeButton/OperativeButton";
@@ -20,15 +16,21 @@ export const AddShowModal: FunctionComponent<AddShowModalProps> = ({
   const [venue, setVenue] = useState("");
   const [date, setDate] = useState("");
   const [ticketLink, setTicketLink] = useState("");
-  const [isFormDisabled, setIsFormDisabled] = useState(true);
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     const show = {
       location: venue,
-      date: date,
-      link: ticketLink
-    }
-  }
+      date: moment(date).unix(),
+      link: ticketLink,
+    };
+    await fetch("api/shows", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(show),
+    });
+    setVisibility(false);
+    window.location.reload();
+  };
 
   return (
     <Modal visible={visible}>
@@ -63,7 +65,9 @@ export const AddShowModal: FunctionComponent<AddShowModalProps> = ({
         </div>
       </form>
       <div className="ml-auto flex flex-row gap-6">
-        <OperativeButton operation="add" onClick={onSubmit}>Add</OperativeButton>
+        <OperativeButton operation="add" onClick={onSubmit}>
+          Add
+        </OperativeButton>
         <OperativeButton
           operation="delete"
           onClick={() => setVisibility(false)}
