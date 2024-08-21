@@ -1,4 +1,4 @@
-import { dbConnect, dbClose } from "../../db/dbConnect";
+import { dbConnect } from "../../db/dbConnect";
 import Show from "../../db/models/Show";
 
 export async function GET() {

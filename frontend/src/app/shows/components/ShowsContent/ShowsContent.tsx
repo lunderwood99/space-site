@@ -6,8 +6,8 @@ import { ShowsTable } from "../ShowsTable/ShowsTable";
 import { NoShows } from "../NoShows/NoShows";
 
 export interface ShowsContentProps {
-  upcomingShows: Array<Show>
-  pastShows: Array<Show>
+  upcomingShows: Array<Show> | undefined
+  pastShows: Array<Show> | undefined
 }
 
 export const ShowsContent: FunctionComponent<ShowsContentProps> = ({ upcomingShows, pastShows }) => {
@@ -41,10 +41,10 @@ export const ShowsContent: FunctionComponent<ShowsContentProps> = ({ upcomingSho
           </button>
         </li>
       </ul>
-      {upcomingShows.length !== 0 && upcomingShowsSelected ? <ShowsTable shows={upcomingShows} /> : null}
-      {upcomingShows.length === 0 && upcomingShowsSelected ? <NoShows showType="UPCOMING"/> : null}
-      {pastShows.length !== 0 && pastShowsSelected ? <ShowsTable shows={pastShows} /> : null}
-      {pastShows.length === 0 && pastShowsSelected ? <NoShows showType="PAST"/> : null}
+      {upcomingShows && upcomingShows.length !== 0 && upcomingShowsSelected ? <ShowsTable shows={upcomingShows} /> : null}
+      {(!upcomingShows || upcomingShows.length === 0) && upcomingShowsSelected ? <NoShows showType="UPCOMING"/> : null}
+      {pastShows && pastShows.length !== 0 && pastShowsSelected ? <ShowsTable shows={pastShows} /> : null}
+      {(!pastShows || pastShows.length === 0) && pastShowsSelected ? <NoShows showType="PAST"/> : null}
     </>
   )
 }

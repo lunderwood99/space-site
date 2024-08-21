@@ -1,5 +1,6 @@
 "use client"
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
+import moment from "moment";
 
 import { ShowsContent } from "./components/ShowsContent/ShowsContent";
 
@@ -11,31 +12,40 @@ export type Show = {
   link: string
 }
 
-const upcomingShows = [
-  {
-    location: 'HQ',
-    date: 1718401888,
-    link: 'https://hqdenver.com/'
-  }
-]
-
-const pastShows = [
-  {
-    location: 'Super Long Bar Name',
-    date: 1749955888,
-    link: 'https://bar.com/'
-  },
-  {
-    location: 'Sadison Bear Harvin',
-    date: 1749955888,
-    link: 'https://sbh.com/'
-  }
-]
-
 const Shows: FunctionComponent<ShowsProps> = () => {
+  const [upcomingShows, setUpcomingShows] = useState<Show[]>([])
+  const [pastShows, setPastShows] = useState<Show[]>([])
+
+  const fetchShows = async () => {
+    const res = await fetch("api/shows")
+    const shows: Show[] = await res.json()
+
+    const currDate = moment().unix()
+
+    let retrievedPastShows: Show[] = []
+    let retrievedUpcomingShows: Show[] = []
+
+    shows.forEach((show) => {
+      if(show.date < currDate) retrievedPastShows.push(show)
+      else retrievedUpcomingShows.push(show)
+    })
+    retrievedPastShows.sort((a, b) => {
+      return b.date - a.date;
+    });
+    retrievedUpcomingShows.sort((a, b) => {
+      return a.date - b.date;
+    });
+    setPastShows(retrievedPastShows)
+    setUpcomingShows(retrievedUpcomingShows)
+  }
+
+  useEffect(() => {
+    fetchShows()
+  }, [])
+
   return(
     <div className="flex flex-col mb-auto mt-8 pt-8 w-full border-t-2 border-white">
-      <ShowsContent upcomingShows={[]} pastShows={pastShows}/>
+      <ShowsContent upcomingShows={upcomingShows} pastShows={pastShows}/>
     </div>
   )
 }
