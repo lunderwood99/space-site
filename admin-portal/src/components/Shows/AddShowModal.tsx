@@ -2,7 +2,6 @@ import {
   Dispatch,
   FunctionComponent,
   SetStateAction,
-  useEffect,
   useState,
 } from "react";
 
@@ -23,7 +22,13 @@ export const AddShowModal: FunctionComponent<AddShowModalProps> = ({
   const [ticketLink, setTicketLink] = useState("");
   const [isFormDisabled, setIsFormDisabled] = useState(true);
 
-  useEffect(() => {}, [venue, date, ticketLink]);
+  const onSubmit = () => {
+    const show = {
+      location: venue,
+      date: date,
+      link: ticketLink
+    }
+  }
 
   return (
     <Modal visible={visible}>
@@ -58,7 +63,7 @@ export const AddShowModal: FunctionComponent<AddShowModalProps> = ({
         </div>
       </form>
       <div className="ml-auto flex flex-row gap-6">
-        <OperativeButton operation="add">Add</OperativeButton>
+        <OperativeButton operation="add" onClick={onSubmit}>Add</OperativeButton>
         <OperativeButton
           operation="delete"
           onClick={() => setVisibility(false)}
