@@ -17,26 +17,14 @@ const Shows: FunctionComponent<ShowsProps> = () => {
   const [pastShows, setPastShows] = useState<Show[]>([]);
 
   const fetchShows = async () => {
-    const res = await fetch("api/shows");
-    const shows: Show[] = await res.json();
+    const upcomingShowsRes = await fetch("api/shows/upcomingShows");
+    const upcomingShows: Show[] = await upcomingShowsRes.json();
 
-    const currDate = moment().unix();
+    const pastShowsRes = await fetch("api/shows/pastShows");
+    const pastShows: Show[] = await pastShowsRes.json();
 
-    let retrievedPastShows: Show[] = [];
-    let retrievedUpcomingShows: Show[] = [];
-
-    shows.forEach((show) => {
-      if (show.date < currDate) retrievedPastShows.push(show);
-      else retrievedUpcomingShows.push(show);
-    });
-    retrievedPastShows.sort((a, b) => {
-      return b.date - a.date;
-    });
-    retrievedUpcomingShows.sort((a, b) => {
-      return a.date - b.date;
-    });
-    setPastShows(retrievedPastShows);
-    setUpcomingShows(retrievedUpcomingShows);
+    setUpcomingShows(upcomingShows);
+    setPastShows(pastShows);
   };
 
   useEffect(() => {
