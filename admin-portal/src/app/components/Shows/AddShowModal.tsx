@@ -1,8 +1,8 @@
 import { Dispatch, FunctionComponent, SetStateAction, useState } from "react";
 import moment from "moment";
 
-import { Modal } from "../Modal/Modal";
-import { OperativeButton } from "../OperativeButton/OperativeButton";
+import { Modal } from "../atoms/Modal/Modal";
+import { OperativeButton } from "../atoms/OperativeButton/OperativeButton";
 
 export interface AddShowModalProps {
   visible: boolean;

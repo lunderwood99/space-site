@@ -1,4 +1,4 @@
-import { Shows } from "@/components/Shows/Shows";
+import { Shows } from "@/app/components/Shows/Shows";
 
 export default function Home() {
   return (

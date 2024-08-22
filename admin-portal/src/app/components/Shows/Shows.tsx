@@ -3,7 +3,7 @@
 import { FunctionComponent, useEffect, useState } from "react";
 
 import { Show, ShowsTable } from "./ShowsTable";
-import { OperativeButton } from "../OperativeButton/OperativeButton";
+import { OperativeButton } from "../atoms/OperativeButton/OperativeButton";
 import { AddShowModal } from "./AddShowModal";
 import { DeleteShowModal } from "./DeleteShowModal";
 
