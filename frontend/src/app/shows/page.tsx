@@ -1,6 +1,5 @@
 "use client";
 import { FunctionComponent, useEffect, useState } from "react";
-import moment from "moment";
 
 import { ShowsContent } from "./components/ShowsContent/ShowsContent";
 
