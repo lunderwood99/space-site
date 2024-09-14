@@ -16,10 +16,8 @@ export type Show = {
 const Shows: FunctionComponent<ShowsProps> = () => {
   const [upcomingShows, setUpcomingShows] = useState<Show[]>([]);
   const [pastShows, setPastShows] = useState<Show[]>([]);
-  const [loading, setLoading] = useState(false);
 
   const fetchShows = async () => {
-    setLoading(true);
     const upcomingShowsRes = await fetch("api/shows/upcomingShows");
     const upcomingShows: Show[] = await upcomingShowsRes.json();
 
@@ -28,7 +26,6 @@ const Shows: FunctionComponent<ShowsProps> = () => {
 
     setUpcomingShows(upcomingShows);
     setPastShows(pastShows);
-    setLoading(false);
   };
 
   useEffect(() => {
@@ -37,10 +34,7 @@ const Shows: FunctionComponent<ShowsProps> = () => {
 
   return (
     <div className="flex justify-center flex-col mb-auto mt-8 pt-8 w-full border-t-2 border-white">
-      {!loading ? (
-        <ShowsContent upcomingShows={upcomingShows} pastShows={pastShows} />
-      ) : null}
-      {loading ? <CircularProgress color="inherit" /> : null}
+      <ShowsContent upcomingShows={upcomingShows} pastShows={pastShows} />
     </div>
   );
 };

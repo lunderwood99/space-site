@@ -16,7 +16,7 @@ export const LatestRelease: FunctionComponent<LatestReleaseProps> = ({
       <div>
         <h2 className="font-bold text-xl">'{release.name}' OUT NOW</h2>
         <Link
-          className="inline-block transition ease-in-out duration-500 text-amber-500 hover:text-amber-500 hover:-translate-y-1 hover:scale-110"
+          className="inline-block transition ease-in-out duration-500 text-violet-400 hover:text-violet-300 hover:-translate-y-1 hover:scale-110"
           href={release.external_urls.spotify}
         >
           Listen on Spotify
