@@ -4,6 +4,8 @@ import { UserProvider } from "@auth0/nextjs-auth0/client";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import { LoggedInHeader } from "./components/organisms/LoggedInHeader/LoggedInHeader";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,7 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <UserProvider>
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <LoggedInHeader />
+          {children}
+        </body>
       </UserProvider>
     </html>
   );
