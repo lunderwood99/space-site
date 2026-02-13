@@ -13,16 +13,23 @@ export type Show = {
   link: string;
 };
 
+type ShowsApiResponse = {
+  status: number;
+  shows: Show[] | null;
+};
+
 const Shows: FunctionComponent<ShowsProps> = () => {
   const [upcomingShows, setUpcomingShows] = useState<Show[]>([]);
   const [pastShows, setPastShows] = useState<Show[]>([]);
 
   const fetchShows = async () => {
     const upcomingShowsRes = await fetch("api/shows/upcomingShows");
-    const upcomingShows: Show[] = await upcomingShowsRes.json();
+    const upcomingShowsData: ShowsApiResponse = await upcomingShowsRes.json();
+    const upcomingShows: Show[] = upcomingShowsData.shows ?? [];
 
     const pastShowsRes = await fetch("api/shows/pastShows");
-    const pastShows: Show[] = await pastShowsRes.json();
+    const pastShowsData: ShowsApiResponse = await pastShowsRes.json();
+    const pastShows: Show[] = pastShowsData.shows ?? [];
 
     setUpcomingShows(upcomingShows);
     setPastShows(pastShows);

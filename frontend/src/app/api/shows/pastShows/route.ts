@@ -10,9 +10,9 @@ export async function GET() {
     shows.sort((a, b) => {
       return b.date - a.date;
     });
-    return Response.json(shows);
+    return Response.json({ status: 200, shows });
   } catch (err) {
     console.error("Retrieving past shows failed: ", err);
-    return Response.json({ status: 500 });
+    return Response.json({ status: 500, shows: null });
   }
 }

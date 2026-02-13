@@ -5,10 +5,10 @@ export async function GET() {
   await dbConnect();
   try {
     const shows = await Show.find();
-    return Response.json(shows);
+    return Response.json({ status: 200, shows });
   } catch (err) {
     console.error("Retrieving shows failed: ", err);
-    return Response.json({ status: 500 });
+    return Response.json({ status: 500, shows: null });
   }
 }
 

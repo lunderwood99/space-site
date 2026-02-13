@@ -16,9 +16,8 @@ export const ShowsTable: FunctionComponent<ShowsTableProps> = ({ shows }) => {
           <th className="flex justify-start w-1/4">Venue</th>
           <th>Date</th>
         </tr>
-        {shows.map((show, index) => (
-          <ShowsTableRow key={index} show={show} />
-        ))}
+        {shows &&
+          shows.map((show, index) => <ShowsTableRow key={index} show={show} />)}
       </table>
     </>
   );

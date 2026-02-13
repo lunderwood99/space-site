@@ -18,7 +18,7 @@ export const ShowsTableRow: FunctionComponent<ShowsTableRowProps> = ({
       </p>
       <a
         href={show.link}
-        className="ml-auto transition ease-in-out duration-500 hover:text-violet-300 hover:-translate-y-1 hover:scale-110 text-violet-400"
+        className="ml-auto transition ease-in-out duration-500 hover:text-violet-400 hover:-translate-y-1 hover:scale-110"
       >
         Buy Tickets
       </a>

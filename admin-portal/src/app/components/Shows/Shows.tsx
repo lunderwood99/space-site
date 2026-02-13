@@ -17,7 +17,7 @@ export const Shows: FunctionComponent<ShowsProps> = () => {
 
   const fetchShows = async () => {
     const res = await fetch("api/shows");
-    const shows = await res.json();
+    const { shows } = await res.json();
     return shows;
   };
 

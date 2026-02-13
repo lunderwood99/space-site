@@ -1,6 +1,7 @@
 "use client";
 
 import { FunctionComponent, useEffect, useState } from "react";
+import { CircularProgress } from "@mui/material";
 
 import { fetchArtistAlbums, fetchSpotifyApiToken } from "./music/routes/routes";
 import {
@@ -10,7 +11,7 @@ import {
 } from "./music/routes/routes.types";
 
 import { LatestRelease } from "./components/molecules/LatestRelease/LatestRelease";
-import { CircularProgress } from "@mui/material";
+import { StreamingServiceHeader } from "./components/molecules/StreamingServiceHeader/StreamingServiceHeader";
 
 export interface HomeProps {}
 
@@ -35,11 +36,19 @@ const Home: FunctionComponent<HomeProps> = () => {
 
   return (
     <>
-      <div className="flex justify-center mb-auto mt-8 pt-8 w-full border-t-2 border-white">
+      <div className="flex flex-col mb-auto mt-4 w-full border-t-2 border-white">
         {!loading && latestRelease ? (
-          <LatestRelease release={latestRelease} />
+          <>
+            <div className="flex justify-center w-full pt-8">
+              <LatestRelease release={latestRelease} />
+            </div>
+          </>
         ) : null}
-        {loading ? <CircularProgress color="inherit" /> : null}
+        {loading ? (
+          <div className="flex justify-center w-full">
+            <CircularProgress color="inherit" />
+          </div>
+        ) : null}
       </div>
     </>
   );

@@ -3,6 +3,11 @@ import { dbConnect } from "../../../../app/db/dbConnect";
 
 import Show from "../../../db/models/Show";
 
+export interface UpcomingShowsResponse {
+  status: number;
+  shows: (typeof Show)[];
+}
+
 export async function GET() {
   await dbConnect();
   try {
@@ -10,9 +15,9 @@ export async function GET() {
     shows.sort((a, b) => {
       return a.date - b.date;
     });
-    return Response.json(shows);
+    return Response.json({ status: 200, shows });
   } catch (err) {
     console.error("Retrieving upcoming shows failed: ", err);
-    return Response.json({ status: 500 });
+    return Response.json({ status: 500, shows: null });
   }
 }

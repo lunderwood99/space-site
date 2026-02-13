@@ -13,6 +13,7 @@ export interface ShowsProps {
 }
 
 export const ShowsTable: FunctionComponent<ShowsProps> = ({ shows }) => {
+  console.log(shows);
   return (
     <div className="w-full max-h-96 overflow-y-scroll">
       <table className="flex flex-col justify-start w-full">
@@ -22,9 +23,10 @@ export const ShowsTable: FunctionComponent<ShowsProps> = ({ shows }) => {
           <th className="w-2/4">Link</th>
         </th>
         <tbody>
-        {shows.map((show, index) => (
-          <ShowsTableRow key={index} show={show} />
-        ))}
+          {shows &&
+            shows.map((show, index) => (
+              <ShowsTableRow key={index} show={show} />
+            ))}
         </tbody>
       </table>
     </div>
