@@ -22,7 +22,7 @@ export const ShowsContent: FunctionComponent<ShowsContentProps> = ({
       <ul className="flex flex-row gap-4 top-0 mr-12 justify-end">
         <li>
           <button
-            className="inline-block transition ease-in-out duration-500 hover:text-violet-400 hover:-translate-y-1 hover:scale-110"
+            className="inline-block transition ease-in-out duration-500 hover:text-violet-500 hover:-translate-y-1 hover:scale-110"
             onClick={() => {
               setUpcomingShowsSelected(true);
               setPastShowsSelected(false);
@@ -34,7 +34,7 @@ export const ShowsContent: FunctionComponent<ShowsContentProps> = ({
         <li>//</li>
         <li>
           <button
-            className="inline-block transition ease-in-out duration-500 hover:text-violet-400 hover:-translate-y-1 hover:scale-110"
+            className="inline-block transition ease-in-out duration-500 hover:text-violet-500 hover:-translate-y-1 hover:scale-110"
             onClick={() => {
               setPastShowsSelected(true);
               setUpcomingShowsSelected(false);

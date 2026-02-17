@@ -18,6 +18,7 @@ export const ShowsTable: FunctionComponent<ShowsProps> = ({ shows }) => {
     <div className="w-full max-h-96 overflow-y-scroll">
       <table className="flex flex-col justify-start w-full">
         <th className="flex flex-row justify-start pl-6 pr-6 items-center h-20">
+          <th className="flex justify-start w-1/4">Venue</th>
           <th className="flex justify-start w-1/4">Location</th>
           <th>Date</th>
           <th className="w-2/4">Link</th>

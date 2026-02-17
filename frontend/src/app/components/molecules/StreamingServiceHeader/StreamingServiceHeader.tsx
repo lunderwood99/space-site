@@ -22,7 +22,7 @@ export const StreamingServiceHeader: FunctionComponent<
           Bandcamp
         </Link>
       )}
-      {bandcampUrl && (spotifyUrl || tidalUrl) && <span>-</span>}
+      {bandcampUrl && (spotifyUrl || tidalUrl) && <span>//</span>}
       {spotifyUrl && (
         <Link
           className="inline-block transition ease-in-out duration-500 text-green-400 hover:-translate-y-1 hover:scale-110"
@@ -33,7 +33,7 @@ export const StreamingServiceHeader: FunctionComponent<
           Spotify
         </Link>
       )}
-      {spotifyUrl && tidalUrl && <span>-</span>}
+      {spotifyUrl && tidalUrl && <span>//</span>}
       {tidalUrl && (
         <Link
           className="inline-block transition ease-in-out duration-500 text-red-400 hover:-translate-y-1 hover:scale-110"

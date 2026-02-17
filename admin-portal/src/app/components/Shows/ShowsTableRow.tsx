@@ -10,6 +10,7 @@ export const ShowsTableRow: FunctionComponent<ShowsTableRowProps> = ({
 }) => {
   return (
     <tr className="flex flex-row justify-start pl-6 pr-6 items-center h-20 border-y">
+      <td className="font-semibold w-1/4">{show.venue}</td>
       <td className="font-semibold w-1/4">{show.location}</td>
       <td className="font-semibold w-1/4">
         {moment.unix(show.date).format("MM/DD/YYYY")}

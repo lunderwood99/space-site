@@ -14,12 +14,14 @@ export const AddShowModal: FunctionComponent<AddShowModalProps> = ({
   setVisibility,
 }) => {
   const [venue, setVenue] = useState("");
+  const [location, setLocation] = useState("");
   const [date, setDate] = useState("");
   const [ticketLink, setTicketLink] = useState("");
 
   const onSubmit = async () => {
     const show = {
-      location: venue,
+      venue: venue,
+      location: location,
       date: moment(date).unix(),
       link: ticketLink,
     };
@@ -37,12 +39,21 @@ export const AddShowModal: FunctionComponent<AddShowModalProps> = ({
       <h3 className="mr-auto text-xl">Add a Show</h3>
       <form>
         <div className="mb-4">
-          <label className="block mb-2">Location</label>
+          <label className="block mb-2">Venue</label>
           <input
             className="rounded text-black"
             type="text"
             value={venue}
             onChange={(e) => setVenue(e.currentTarget.value)}
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2">Location</label>
+          <input
+            className="rounded text-black"
+            type="text"
+            value={location}
+            onChange={(e) => setLocation(e.currentTarget.value)}
           />
         </div>
         <div className="mb-4">

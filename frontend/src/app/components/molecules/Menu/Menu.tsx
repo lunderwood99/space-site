@@ -9,7 +9,7 @@ export const Menu: FunctionComponent<MenuProps> = () => {
       <ul className="flex flex-row justify-between mt-8">
         <li>
           <Link
-            className="inline-block transition ease-in-out duration-500 hover:text-violet-400 hover:-translate-y-1 hover:scale-110"
+            className="inline-block transition ease-in-out duration-500 hover:text-violet-500 hover:-translate-y-1 hover:scale-110"
             href="/"
           >
             Home
@@ -18,7 +18,7 @@ export const Menu: FunctionComponent<MenuProps> = () => {
         <li>//</li>
         <li>
           <Link
-            className="inline-block transition ease-in-out duration-500 hover:text-violet-400 hover:-translate-y-1 hover:scale-110"
+            className="inline-block transition ease-in-out duration-500 hover:text-violet-500 hover:-translate-y-1 hover:scale-110"
             href="/music"
           >
             Music
@@ -27,7 +27,7 @@ export const Menu: FunctionComponent<MenuProps> = () => {
         <li>//</li>
         <li>
           <Link
-            className="inline-block transition ease-in-out duration-500 hover:text-violet-400 hover:-translate-y-1 hover:scale-110"
+            className="inline-block transition ease-in-out duration-500 hover:text-violet-500 hover:-translate-y-1 hover:scale-110"
             href="/shows"
           >
             Shows
@@ -36,7 +36,7 @@ export const Menu: FunctionComponent<MenuProps> = () => {
         <li>//</li>
         <li>
           <Link
-            className="inline-block transition ease-in-out duration-500 hover:text-violet-400 hover:-translate-y-1 hover:scale-110"
+            className="inline-block transition ease-in-out duration-500 hover:text-violet-500 hover:-translate-y-1 hover:scale-110"
             href="/contact"
           >
             Contact

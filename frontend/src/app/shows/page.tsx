@@ -2,12 +2,12 @@
 
 import { FunctionComponent, useEffect, useState } from "react";
 
-import { CircularProgress } from "@mui/material";
 import { ShowsContent } from "./components/ShowsContent/ShowsContent";
 
 export interface ShowsProps {}
 
 export type Show = {
+  venue: string;
   location: string;
   date: number;
   link: string;
@@ -40,7 +40,7 @@ const Shows: FunctionComponent<ShowsProps> = () => {
   }, []);
 
   return (
-    <div className="flex justify-center flex-col mb-auto mt-8 pt-8 w-full border-t-2 border-white">
+    <div className="flex justify-center flex-col mb-auto mt-4 pt-4 w-full border-t-2 border-white">
       <ShowsContent upcomingShows={upcomingShows} pastShows={pastShows} />
     </div>
   );

@@ -19,9 +19,9 @@ export const MusicTableRow: FunctionComponent<MusicTableRowProps> = ({
       <p className="opacity-75 ml-8 w-1/6">
         {moment(album.release_date).format("MMM DD, YYYY")}
       </p>
-      <div className="ml-auto">
-        <AlbumIcon className="transition ease-in-out duration-500 hover:text-violet-400 hover:cursor-pointer" />
-      </div>
+      <a className="ml-auto" href={album.external_urls.spotify}>
+        <AlbumIcon className="transition ease-in-out duration-500 hover:text-violet-500 hover:cursor-pointer" />
+      </a>
     </div>
   );
 };
