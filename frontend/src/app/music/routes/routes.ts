@@ -4,7 +4,7 @@ export const fetchArtistAlbums = async (accessToken: string) => {
     {
       method: "GET",
       headers: { Authorization: "Bearer " + accessToken },
-    }
+    },
   );
   return await response.json();
 };
@@ -22,7 +22,7 @@ export const fetchSpotifyApiToken = async () => {
         Buffer.from(
           process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID +
             ":" +
-            process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET
+            process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET,
         ).toString("base64"),
     },
   });

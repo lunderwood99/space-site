@@ -16,9 +16,10 @@ export const MusicTable: FunctionComponent<MusicTableProps> = ({ albums }) => {
         <th className="flex justify-start ml-8 w-1/6">Type</th>
         <th className="flex justify-start ml-8 w-1/6">Release Date</th>
       </tr>
-      {albums.map((album, index) => (
-        <MusicTableRow key={index} album={album} />
-      ))}
+      {albums &&
+        albums.map((album, index) => (
+          <MusicTableRow key={index} album={album} />
+        ))}
     </div>
   );
 };
