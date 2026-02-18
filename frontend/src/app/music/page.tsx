@@ -24,7 +24,7 @@ const Music: FunctionComponent<MusicProps> = async () => {
   const artistAlbumsResponse = await getArtistAlbums();
 
   return (
-    <div className="mt-4 w-full border-t-2 border-white min-w-[400px] overflow-hidden">
+    <div className="flex justify-center flex-col mb-auto mt-4 w-full border-t-2 border-white">
       <div className="flex justify-end w-full pr-8">
         <StreamingServiceHeader
           bandcampUrl={process.env.NEXT_PUBLIC_BANDCAMP_URL}

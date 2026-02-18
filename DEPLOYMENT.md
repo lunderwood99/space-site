@@ -53,16 +53,16 @@ Deploy all services together using Docker Compose:
 
 ```bash
 # Build and start all services
-docker-compose -f docker-compose.prod.yaml up -d --build
+docker-compose -f docker-compose.yaml up -d --build
 
 # View logs
-docker-compose -f docker-compose.prod.yaml logs -f
+docker-compose -f docker-compose.yaml logs -f
 
 # Stop services
-docker-compose -f docker-compose.prod.yaml down
+docker-compose -f docker-compose.yaml down
 
 # Stop and remove volumes (⚠️ deletes data)
-docker-compose -f docker-compose.prod.yaml down -v
+docker-compose -f docker-compose.yaml down -v
 ```
 
 The services will be available at:
