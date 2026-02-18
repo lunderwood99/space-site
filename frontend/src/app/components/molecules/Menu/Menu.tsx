@@ -37,9 +37,9 @@ export const Menu: FunctionComponent<MenuProps> = () => {
         <li>
           <Link
             className="inline-block transition ease-in-out duration-500 hover:text-violet-500 hover:-translate-y-1 hover:scale-110"
-            href="/contact"
+            href="/about"
           >
-            Contact
+            About
           </Link>
         </li>
       </ul>

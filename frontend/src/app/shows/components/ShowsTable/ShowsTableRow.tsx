@@ -23,7 +23,7 @@ export const ShowsTableRow: FunctionComponent<ShowsTableRowProps> = ({
         rel="noopener noreferrer"
         className="ml-auto transition ease-in-out duration-500 hover:text-violet-500 hover:-translate-y-1 hover:scale-110"
       >
-        Buy Tickets
+        More Info
       </a>
     </tr>
   );

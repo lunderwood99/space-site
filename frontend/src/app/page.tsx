@@ -11,7 +11,6 @@ import {
 } from "./music/routes/routes.types";
 
 import { LatestRelease } from "./components/molecules/LatestRelease/LatestRelease";
-import { StreamingServiceHeader } from "./components/molecules/StreamingServiceHeader/StreamingServiceHeader";
 
 export interface HomeProps {}
 
