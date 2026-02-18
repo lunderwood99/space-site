@@ -3,6 +3,7 @@
 import { FunctionComponent, useEffect, useState } from "react";
 
 import { ShowsContent } from "./components/ShowsContent/ShowsContent";
+import { CircularProgress } from "@mui/material";
 
 export interface ShowsProps {}
 
@@ -21,8 +22,10 @@ type ShowsApiResponse = {
 const Shows: FunctionComponent<ShowsProps> = () => {
   const [upcomingShows, setUpcomingShows] = useState<Show[]>([]);
   const [pastShows, setPastShows] = useState<Show[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const fetchShows = async () => {
+    setLoading(true);
     const upcomingShowsRes = await fetch("api/shows/upcomingShows");
     const upcomingShowsData: ShowsApiResponse = await upcomingShowsRes.json();
     const upcomingShows: Show[] = upcomingShowsData.shows ?? [];
@@ -33,6 +36,7 @@ const Shows: FunctionComponent<ShowsProps> = () => {
 
     setUpcomingShows(upcomingShows);
     setPastShows(pastShows);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -41,7 +45,14 @@ const Shows: FunctionComponent<ShowsProps> = () => {
 
   return (
     <div className="flex justify-center flex-col mb-auto mt-4 pt-4 w-full border-t-2 border-white">
-      <ShowsContent upcomingShows={upcomingShows} pastShows={pastShows} />
+      {!loading && (
+        <ShowsContent upcomingShows={upcomingShows} pastShows={pastShows} />
+      )}
+      {loading && (
+        <div className="flex mt-10 justify-center w-full">
+          <CircularProgress color="inherit" />
+        </div>
+      )}
     </div>
   );
 };

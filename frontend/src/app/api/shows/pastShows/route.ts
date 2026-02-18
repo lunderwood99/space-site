@@ -3,6 +3,13 @@ import { dbConnect } from "../../../../app/db/dbConnect";
 
 import Show from "../../../db/models/Show";
 
+export const dynamic = "force-dynamic";
+
+const noStoreHeaders = {
+  "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+  Pragma: "no-cache",
+};
+
 export async function GET() {
   await dbConnect();
   try {
@@ -10,17 +17,12 @@ export async function GET() {
     shows.sort((a, b) => {
       return b.date - a.date;
     });
-    return Response.json({
-      status: 200,
-      headers: { "Cache-Control": "no-cache, no-store" },
-      shows,
-    });
+    return Response.json({ status: 200, shows }, { headers: noStoreHeaders });
   } catch (err) {
     console.error("Retrieving past shows failed: ", err);
-    return Response.json({
-      status: 500,
-      headers: { "Cache-Control": "no-cache, no-store" },
-      shows: null,
-    });
+    return Response.json(
+      { status: 500, shows: null },
+      { headers: noStoreHeaders },
+    );
   }
 }

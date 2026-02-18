@@ -45,7 +45,7 @@ const Home: FunctionComponent<HomeProps> = () => {
           </>
         ) : null}
         {loading ? (
-          <div className="flex justify-center w-full">
+          <div className="flex mt-10 justify-center w-full">
             <CircularProgress color="inherit" />
           </div>
         ) : null}
