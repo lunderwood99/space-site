@@ -10,9 +10,17 @@ export async function GET() {
     shows.sort((a, b) => {
       return b.date - a.date;
     });
-    return Response.json({ status: 200, shows });
+    return Response.json({
+      status: 200,
+      headers: { "Cache-Control": "no-cache, no-store" },
+      shows,
+    });
   } catch (err) {
     console.error("Retrieving past shows failed: ", err);
-    return Response.json({ status: 500, shows: null });
+    return Response.json({
+      status: 500,
+      headers: { "Cache-Control": "no-cache, no-store" },
+      shows: null,
+    });
   }
 }
