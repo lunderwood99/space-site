@@ -15,7 +15,7 @@ export const StreamingServiceHeader: FunctionComponent<
     <div className="flex flex-row justify-center items-center gap-4 mt-4">
       {appleMusicUrl && (
         <Link
-          className="inline-block transition ease-in-out duration-500 text-red-500 hover:-translate-y-1 hover:scale-110"
+          className="inline-block transition ease-in-out duration-500 text-rose-500 hover:-translate-y-1 hover:scale-110"
           href={appleMusicUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -26,7 +26,7 @@ export const StreamingServiceHeader: FunctionComponent<
       {appleMusicUrl && bandcampUrl && <span>//</span>}
       {bandcampUrl && (
         <Link
-          className="inline-block transition ease-in-out duration-500 text-blue-500 hover:-translate-y-1 hover:scale-110"
+          className="inline-block transition ease-in-out duration-500 text-sky-500 hover:-translate-y-1 hover:scale-110"
           href={bandcampUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -37,7 +37,7 @@ export const StreamingServiceHeader: FunctionComponent<
       {bandcampUrl && (spotifyUrl || tidalUrl) && <span>//</span>}
       {spotifyUrl && (
         <Link
-          className="inline-block transition ease-in-out duration-500 text-green-500 hover:-translate-y-1 hover:scale-110"
+          className="inline-block transition ease-in-out duration-500 text-lime-500 hover:-translate-y-1 hover:scale-110"
           href={spotifyUrl}
           target="_blank"
           rel="noopener noreferrer"
