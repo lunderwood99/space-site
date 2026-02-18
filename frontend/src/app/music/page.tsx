@@ -30,6 +30,7 @@ const Music: FunctionComponent<MusicProps> = async () => {
           bandcampUrl={process.env.NEXT_PUBLIC_BANDCAMP_URL}
           spotifyUrl={process.env.NEXT_PUBLIC_SPOTIFY_URL}
           tidalUrl={process.env.NEXT_PUBLIC_TIDAL_URL}
+          appleMusicUrl={process.env.NEXT_PUBLIC_APPLE_MUSIC_URL}
         />
       </div>
       <MusicTable albums={artistAlbumsResponse.items} />
