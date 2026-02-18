@@ -25,8 +25,13 @@ export async function dbConnect() {
   } catch (error: any) {
     // During build time, MongoDB may not be available - gracefully handle connection errors
     // Connection will be established at runtime when API routes are called
-    if (error?.code === 'ECONNREFUSED' || error?.name === 'MongooseServerSelectionError') {
-      console.warn("MongoDB connection unavailable (likely during build). Will connect at runtime.");
+    if (
+      error?.code === "ECONNREFUSED" ||
+      error?.name === "MongooseServerSelectionError"
+    ) {
+      console.warn(
+        "MongoDB connection unavailable (likely during build). Will connect at runtime.",
+      );
       return;
     }
     // Re-throw other errors
