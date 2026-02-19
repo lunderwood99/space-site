@@ -25,7 +25,7 @@ const Music: FunctionComponent<MusicProps> = async () => {
 
   return (
     <div className="flex justify-center flex-col mb-auto mt-4 w-full border-t-2 border-white">
-      <div className="flex justify-end w-full pr-8">
+      <div className="flex justify-end w-full mobile:font-xs">
         <StreamingServiceHeader
           bandcampUrl={process.env.NEXT_PUBLIC_BANDCAMP_URL}
           spotifyUrl={process.env.NEXT_PUBLIC_SPOTIFY_URL}
