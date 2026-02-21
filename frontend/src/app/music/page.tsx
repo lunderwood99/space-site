@@ -7,9 +7,9 @@ import {
   ArtistAlbumsResponse,
   SpotifyApiTokenResponse,
 } from "./routes/routes.types";
-import { StreamingServiceHeader } from "../components/molecules/StreamingServiceHeader/StreamingServiceHeader";
+import { StreamingServiceHeader } from "./components/StreamingServiceHeader/StreamingServiceHeader";
 
-export interface MusicProps {}
+export interface MusicProps { }
 
 async function getArtistAlbums() {
   const fetchSpotifyApiTokenResponse: SpotifyApiTokenResponse =

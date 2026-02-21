@@ -4,6 +4,7 @@ import "./globals.css";
 import { Stars } from "@/app/components/atoms/Stars/Stars";
 import { Title } from "@/app/components/atoms/Title/Title";
 import { Menu } from "@/app/components/molecules/Menu/Menu";
+import { Header } from "./components/molecules/Header/Header";
 
 export const metadata: Metadata = {
   title: "Moonshake",
@@ -18,7 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="flex min-h-screen flex-col items-center justify-between py-12 default:px-24 mobile:px-8">
+        <main className="flex min-h-screen flex-col items-center justify-between pt-0 py-12 default:px-24 mobile:px-8">
+          <Header />
           <div>
             <Stars />
             <Title />
